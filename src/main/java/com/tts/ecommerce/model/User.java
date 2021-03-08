@@ -34,14 +34,11 @@ public class User implements UserDetails {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
+
   @NotEmpty
   private String username;
   @NotEmpty
   private String password;
-  @NotEmpty
-  private String firstName;
-  @NotEmpty
-  private String lastName;
 
   @ElementCollection
   private Map<Product, Integer> cart;

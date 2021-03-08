@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments :: head"></head>
+<head th:replace="fragments/fragments :: head"></head>
 <head><link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"></head>
 <body style="padding: 0">
-<div th:replace="fragments :: navbar" ></div>
+<div th:replace="fragments/fragments :: navbar" ></div>
 
 <main role="main">
     <div class="container">
-        <form class="form-signin" th:action="@{/signin}" method="post">
+        <form class="form-signin" th:action="@{/signin}" action="#" method="post">
             <h2 class="form-signin-heading" style="text-align: center">Please Sign In/Up</h2>
             <p>
                 <label for="username" class="sr-only">Username</label>
@@ -25,7 +25,26 @@
     </div>
 </main>
 
-<div th:replace="fragments :: footer"></div>
+<div th:replace="fragments/fragments :: footer"></div>
+<!--<script type="text/javascript">-->
+<!--function validate() {-->
+<!--    if (document.f.username.value == "" && document.f.password.value == "") {-->
+<!--        alert("Username and password are required");-->
+<!--        document.f.username.focus();-->
+<!--        return false;-->
+<!--    }-->
+<!--    if (document.f.username.value == "") {-->
+<!--        alert("Username is required");-->
+<!--        document.f.username.focus();-->
+<!--        return false;-->
+<!--    }-->
+<!--    if (document.f.password.value == "") {-->
+<!--	alert("Password is required");-->
+<!--	document.f.password.focus();-->
+<!--        return false;-->
+<!--    }-->
+<!--}-->
+<!--</script>-->
 </body>
 </html>
 

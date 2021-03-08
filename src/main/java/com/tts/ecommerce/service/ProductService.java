@@ -1,7 +1,7 @@
 package com.tts.ecommerce.service;
 
 import com.tts.ecommerce.model.Product;
-import com.tts.ecommerce.repository.ProductRepo;
+import com.tts.ecommerce.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,41 +10,41 @@ import java.util.List;
 @Service
 public class ProductService {
   @Autowired
-  ProductRepo productRepo;
+  ProductRepository productRepository;
 
   public List<Product> findAll(){
-    return productRepo.findAll();
+    return productRepository.findAll();
   }
 
   public Product findById(long id){
-    return productRepo.findById(id);
+    return productRepository.findById(id);
   }
 
   public List<String> findDistinctBrands(){
-    return productRepo.findDistinctBrands();
+    return productRepository.findDistinctBrands();
   }
 
   public List<String> findDistinctCategories(){
-    return productRepo.findDistinctCategories();
+    return productRepository.findDistinctCategories();
   }
 
   public void save(Product product){
-    productRepo.save(product);
+    productRepository.save(product);
   }
 
   public void deleteById(long id){
-    productRepo.deleteById(id);
+    productRepository.deleteById(id);
   }
 
   public List<Product> findByBrandAndOrCategory(String brand, String category){
     if(category == null && brand == null){
-      return productRepo.findAll();
+      return productRepository.findAll();
     }else if(category == null){
-      return productRepo.findByBrand(brand);
+      return productRepository.findByBrand(brand);
     }else if(brand == null){
-      return productRepo.findByCategory(category);
+      return productRepository.findByCategory(category);
     }else{
-      return productRepo.findByBrandAndCategory(brand, category);
+      return productRepository.findByBrandAndCategory(brand, category);
     }
   }
 }

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ProductRepo extends CrudRepository<Product, Long> {
+public interface ProductRepository extends CrudRepository<Product, Long> {
 
   List<Product> findAll();
   Product findById(long id);
@@ -16,10 +16,10 @@ public interface ProductRepo extends CrudRepository<Product, Long> {
   List<Product> findByCategory(String category);
   List<Product> findByBrandAndCategory(String brand, String category);
 
-  @Query("SELECT DISTINCT p.brand FROM p")
+  @Query("SELECT DISTINCT p.brand FROM Product p")
   List<String> findDistinctBrands();
 
-  @Query("SELECT DISTINCT p.category FROM p")
+  @Query("SELECT DISTINCT p.category FROM Product p")
   List<String> findDistinctCategories();
 
 
